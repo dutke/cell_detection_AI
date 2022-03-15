@@ -1,8 +1,9 @@
 import glob
 import os
 
-folder = "./Dutke/antoineGmal/img3/"
-# search text files starting with the word "sales"
+# put the relative path to the folder containing your raw_data with annotations
+folder = "./Dutke/demerdetoiantoine/img3/"
+# search image files
 pattern = folder + "*.jpg"
 
 
@@ -20,9 +21,8 @@ for file_name in result:
 
 
 
-# printing all jpg and txt files
+# printing all jpg files
 res = glob.glob(folder + "*.jpg")
 
 for name in res:
     print(name)
-

@@ -1,9 +1,10 @@
 import glob
 import os
 
-folder = "./Dutke/antoineGmal/img3/"
-# search text files starting with the word "sales"
-pattern = folder + "*.txt"
+# put the relative path to the folder containing your raw_data with annotations
+folder = "./Dutke/demerdetoiantoine/img3/"
+# search text files with an "F" in the name to prevent renaming "classes.txt"
+pattern = folder + "*F*.txt"
 
 
 # List of the files that match the pattern
@@ -20,9 +21,8 @@ for file_name in result:
 
 
 
-# printing all jpg and txt files
+# printing all txt files
 res = glob.glob(folder + "*.txt")
 
 for name in res:
     print(name)
-
