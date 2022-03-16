@@ -2,13 +2,17 @@
 a cell detecting AI for my study project
 
 
-<details><summary>How to use the AI</summary>
+<details><summary>**User Guide**</summary>
 <p>
 
-#### At first you have to !
+#### Setup your environment
+    
+    1. Open a command prompt 
 
-    ```ruby
-      puts "Hello World"
+    With the `cd` command, navigate to the directory **/PE**
+    
+    ```
+        puts "Hello World"
     ```
 
 </p>
