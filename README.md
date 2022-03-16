@@ -2,10 +2,10 @@
 a cell detecting AI for my study project
 
 
-<details><summary>CLICK ME</summary>
+<details><summary>How to use the AI</summary>
 <p>
 
-#### We can hide anything, even code!
+#### At first you have to !
 
     ```ruby
       puts "Hello World"
