@@ -1,5 +1,4 @@
 # cell_detection_AI
-a cell detecting AI for my study project
 
 #### **USER GUIDE**
 ### Setup your environment
