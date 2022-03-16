@@ -7,7 +7,7 @@ a cell detecting AI for my study project
     
 1. Open a command prompt 
 
-With the `cd` command, navigate to the directory **/PE**
+With the `cd` command, navigate to the directory "**/PE**"
     
 ```
    %cd 
