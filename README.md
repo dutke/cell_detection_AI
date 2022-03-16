@@ -1,11 +1,9 @@
 # cell_detection_AI
 a cell detecting AI for my study project
 
-
-<details><summary><b>**User Guide**</b></summary>
-<p>
-
-#### Setup your environment
+#### **USER GUIDE**
+    ###Setup your environment
+    
     
     1. Open a command prompt 
 
@@ -14,6 +12,3 @@ a cell detecting AI for my study project
     ```
         puts "Hello World"
     ```
-
-</p>
-</details>
