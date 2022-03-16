@@ -2,7 +2,7 @@
 a cell detecting AI for my study project
 
 
-<details><summary>**User Guide**</summary>
+<details><summary><b>**User Guide**</b></summary>
 <p>
 
 #### Setup your environment
