@@ -7,7 +7,7 @@
 
 With the `cd` command, navigate to the directory where you want to download that git.
 ```
-    git clone 
+    git clone https://github.com/dutke/cell_detection_AI.git
 ```
 
 
