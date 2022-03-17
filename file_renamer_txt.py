@@ -2,7 +2,7 @@ import glob
 import os
 
 # put the relative path to the folder containing your raw_data with annotations
-folder = "./Dutke/demerdetoiantoine/img3/"
+folder = "./doc_data/doc_images"
 # search text files with an "F" in the name to prevent renaming "classes.txt"
 pattern = folder + "*F*.txt"
 
