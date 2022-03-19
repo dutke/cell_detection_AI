@@ -17,3 +17,5 @@ Then, browse to the "**/PE**" folder.
    cd "/PE"
 ```
 
+ 
+ 1. By doing the training execution on Google Colab, you need to restart the executtion cell after the `^C` error. The weights are saved on every epoch in the backup folder so that you don't start again the training from 0.
