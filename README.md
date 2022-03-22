@@ -10,8 +10,46 @@ With the `cd` command, navigate to the directory where you want to download that
     git clone https://github.com/dutke/cell_detection_AI.git
 ```
 
-Download the *doc_data* directory from that link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing)
+Download the files from the *doc_data* directory with the link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing)
+Put the files in a folder in darknet root directory with the following structure :
+```
+darknet
+└───3rdparty
+└───backup  
+└───build
+└───cfg
+└───cmake
+└───data
+└───doc_data
+    └───doc_images
+        │   (1).jpg
+        │   (1).txt
+        │   ...
+    └───test
+        └───video_test
+        |   (1).jpg
+        |   (2).jpg
+        |   ...
+        |   FDG82336....
+    |   document.data
+    |   document.names
+    |   document_test.txt
+    |   document_training.txt
+    |   yolov4.conv.137
+    |   yolov4.weights
+    |   yolov4_custom.cfg
+    |   yolov4_custom_best.weights
+│   
+└───include
+└───obj
+└───results
+└───scripts
+└───src
+|CMakeLists.txt
+|DarknetConfig.cmake.in
+|...
 
+```
 Then, browse to the "**/PE**" folder.
     
 ```
