@@ -10,6 +10,7 @@ With the `cd` command, navigate to the directory where you want to download that
     git clone https://github.com/dutke/cell_detection_AI.git
 ```
 
+Download the *doc_data* directory from that link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing)
 
 Then, browse to the "**/PE**" folder.
     
