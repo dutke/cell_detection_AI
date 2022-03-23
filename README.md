@@ -4,7 +4,9 @@
 ## Setup the environment
   
   
-1. At first, you need the files from [this git](https://github.com/dutke/cell_detection_AI.git). With the `cd` command, navigate to the previous directory. (/content/drive/MyDrive/Colab Notebooks)
+1. At first, open a new notebook in [Google Colab](https://colab.research.google.com/)
+
+2. Download the files from [this git](https://github.com/dutke/cell_detection_AI.git).  
 ```
     from google.colab import drive
     drive.mount('/content/drive')
@@ -15,9 +17,14 @@
     
     %cd ./cell_detection_AI
     %pwd # display: /content/drive/MyDrive/Colab Notebooks/cell_detection_AI
+    
+    # The 2 last lines are here to save the changes on your Google Drive directly.
+    
+    drive.flush_and_unmount()
+    print('All changes made in this colab session should now be visible in Drive.')
 ```
 
-2. Then you need to download the *Darknet network*. You can do it from this [git.](https://github.com/AlexeyAB/darknet) or,  if you want to do it directly in Google Colab to save the *darknet* folder in your Drive with the easiest path, execute the command lines **below** at the beginning of your notebook. 
+3. Then you need to download the *Darknet network*. You can do it from this [git.](https://github.com/AlexeyAB/darknet) or,  if you want to do it directly in Google Colab to save the *darknet* folder in your Drive with the easiest path, execute the command lines **below** at the beginning of your notebook. 
 
 ```   
     !git clone https://github.com/AlexeyAB/darknet
@@ -25,7 +32,7 @@
     %cd ./darknet
 ```
 
-3. Download the files from the *doc_data* directory with the link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing) \
+4. Download the files from the *doc_data* directory with the link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing) \
 Put the files in a folder placed in the darknet root directory as the following structure :
 ```
 darknet
@@ -66,7 +73,7 @@ darknet
 
 ```
 
-4. If this is not already the case, put the ***darknet*** root directory win this git folder such as : 
+5. If this is not already the case, put the ***darknet*** root directory win this git folder such as : 
 ```
 cell_detection_AI
 |
@@ -116,7 +123,7 @@ drive
 
 
 
-Now you need to compile the network. To do so, execute the command lines **below**. (They are from the `custom_network.ipynb` notebook. Executing that notebook will execute this step for you) 
+Now you can compile the network. To do so, execute the command lines **below**. (They are from the `custom_network.ipynb` notebook. Executing that notebook will execute this step for you) 
 
 ```   
     %cd "/content/drive/MyDrive/Colab Notebooks/cell_detection_AI/darknet"
