@@ -121,5 +121,5 @@ In this directory are all the files I needed for the training and the evaluation
 
 # **ISSUES**
 
- 1. By doing the training execution on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved on every epoch in the backup folder so that you don't start again the training from 0.
+ 1. In `custom_network.ipynb`, by executing the training on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved on every epoch in the backup folder so that you don't start again the training from 0.
 
