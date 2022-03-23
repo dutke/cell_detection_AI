@@ -103,15 +103,23 @@ In package `cell_detection_ai` is the main code :
 - `file_renamer_jpg.py`: A script to rename all the elements of a folder that end with the extension *.jpg* as *(1).jpg, (2).jpg,...*
 - `file_renamer_txt.py`: A script to rename all the elements of a folder that end with the extension *.txt* as *(1).txt, (2).txt.* except the *classes.txt* file. Pay attention that if frame(.jpg file) has an annotation (.txt file) linked to it in the same folder, the frame number and the annotation number will match.
 
+
+## The doc_data directory
+
+In this directory are all the files I needed for the training and the evaluation of the CNN.
+
+- `./doc_images`: This folder contains the dataset used for the training of the CNN. It needs to contain the pictures and their corresponding annotations from labelImg, plus the `classes.txt` file. The *classes.txt* file corresponds to the labels that were annoted in the pictures.
+- `test`: This folder contains an image that was used to evaluate the performance of the training with the `image_yolo.ipynb` scriptn and a folder containing all the frames of a video that was used in the `multiple_frame_yolo.ipynb`.
+- `document_test.txt`: A map of the data used for the test.
+- `document_training.txt`: A map of the data used for the training.
+- `document.data`: A configuration map of the other maps.
+- `document.names`: A map of the label for detection.
+- `yolov4_custom.cfg`: A configuration file for the trining of the CNN.
+- `yolov4.weights`: A file containing the weights obtained after a training on a the COCO dataset.
+- `yolov4_custom_best.weights`: A file containing the weights obtained after a training on the dataset in `doc_images`.
+- `yolov4.conv.137`: A file used to create the first backups of the weights if the CNN is strating from scratch. 
+
 # **ISSUES**
 
  1. By doing the training execution on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved on every epoch in the backup folder so that you don't start again the training from 0.
 
-
-
-
-
-#### **History**
-### First training
-
-1. The dataset was only composed of 132 annoted frames from 4 videos. The number of epochs was of 2000 with a learning rate of 0.0015. At 1300 epochs, the mAP gave an accuracy of 53% (the accuracy is equal to $\frac{*TP* + *FP*}{*TP* + *FP* + *TN* + *FN*}$, with *TP* the number of true positives, *FP* the number of false positives, *TN* the number of true negatives and *FN* the number of false negatives)
