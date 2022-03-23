@@ -2,15 +2,30 @@
 
 # **USER GUIDE**
 ## Setup the environment
+  
+  
+1. At first, you need the files from [this git](https://github.com/dutke/cell_detection_AI.git). With the `cd` command, navigate to the previous directory. (/content/drive/MyDrive/Colab Notebooks)
+```
+    from google.colab import drive
+    drive.mount('/content/drive')
+
+    %cd "/content/drive/MyDrive/Colab Notebooks"
+
+    !git clone https://github.com/dutke/cell_detection_AI.git
     
-1. Open a command prompt 
-
-With the `cd` command, navigate to the directory where you want to download that git.
-```
-    git clone https://github.com/dutke/cell_detection_AI.git
+    %cd ./cell_detection_AI
+    %pwd # display: /content/drive/MyDrive/Colab Notebooks/cell_detection_AI
 ```
 
-Download the files from the *doc_data* directory with the link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing) \
+2. Then you need to download the *Darknet network*. You can do it from this [git.](https://github.com/AlexeyAB/darknet) or,  if you want to do it directly in Google Colab to save the *darknet* folder in your Drive with the easiest path, execute the command lines **below** at the beginning of your notebook. 
+
+```   
+    !git clone https://github.com/AlexeyAB/darknet
+    
+    %cd ./darknet
+```
+
+3. Download the files from the *doc_data* directory with the link : [***doc_data***](https://drive.google.com/drive/folders/1CN0wtB8tAOkvwMoFn3bnV_cpa7my7MFb?usp=sharing) \
 Put the files in a folder placed in the darknet root directory as the following structure :
 ```
 darknet
@@ -51,13 +66,14 @@ darknet
 
 ```
 
-Put the ***darknet*** root directory win this git folder such as : 
+4. If this is not already the case, put the ***darknet*** root directory win this git folder such as : 
 ```
-cell_detection_ai
+cell_detection_AI
 |
 └───darknet
     └───3rdparty
     |...
+|
 |   custom_network.ipynb
 |   image_yolo.ipynb
 |   multiple_frame_yolo.ipynb
@@ -67,19 +83,48 @@ cell_detection_ai
 
 ```
 
-Finally, upload on your Google Drive the *cell_detection _ai* folder such as :
+4. Finally, your Google Drive should present a path to the *cell_detection _AI* folder such as :
 
 ```
 drive
 └───MyDrive
     └───Colab Notebook
-        └───darknet
-        |
-        |   custom_network.ipynb
-        |   ...
+        └───cell_detection_AI
+            └───darknet
+            |
+            |   custom_network.ipynb
+            |   ...
 
 ```
 
+## Compile the Darknet network
+
+**CARE: Please refer to the `custom_network.ipynb` notebook for the modifications you have to do in the `Makefile` before compiling darknet.**
+
+
+> Open the **makefile** file and change these lines
+
+> GPU=1 <br>
+> CUDNN=1 <br>
+> OPENCV=1 <br> 
+> *Line 20, comment*: <br>
+> `# ARCH= -gencode arch=compute_20,code=[sm_20,sm_21]` <br>
+          `-gencode arch=compute_30, code=...` <br>
+
+> For K80 GPU, add in *line 61* :<br>
+> `ARCH= -gencode arch=compute_37, code=sm_37`
+
+
+
+Now you need to compile the network. To do so, execute the command lines **below**. (They are from the `custom_network.ipynb` notebook. Executing that notebook will execute this step for you) 
+
+```   
+    %cd "/content/drive/MyDrive/Colab Notebooks/cell_detection_AI/darknet"
+    
+    !chmod +rwx ./*
+    
+    !make
+```
 
 ## Dependencies
 
@@ -109,7 +154,7 @@ In package `cell_detection_ai` is the main code :
 In this directory are all the files I needed for the training and the evaluation of the CNN.
 
 - `./doc_images`: This folder contains the dataset used for the training of the CNN. It needs to contain the pictures and their corresponding annotations from labelImg, plus the `classes.txt` file. The *classes.txt* file corresponds to the labels that were annoted in the pictures.
-- `test`: This folder contains an image that was used to evaluate the performance of the training with the `image_yolo.ipynb` scriptn and a folder containing all the frames of a video that was used in the `multiple_frame_yolo.ipynb`.
+- `./test`: This folder contains an image that was used to evaluate the performance of the training with the `image_yolo.ipynb` scriptn and a folder containing all the frames of a video that was used in the `multiple_frame_yolo.ipynb`.
 - `document_test.txt`: A map of the data used for the test.
 - `document_training.txt`: A map of the data used for the training.
 - `document.data`: A configuration map of the other maps.
@@ -121,5 +166,5 @@ In this directory are all the files I needed for the training and the evaluation
 
 # **ISSUES**
 
- 1. In `custom_network.ipynb`, by executing the training on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved on every epoch in the backup folder so that you don't start again the training from 0.
+ 1. In `custom_network.ipynb`, by executing the training on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved every hundred of epochs in the backup folder so that you don't start again the training from 0.
 
