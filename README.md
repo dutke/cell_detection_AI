@@ -1,6 +1,6 @@
 # cell_detection_AI
 
->author: Dutkiewicz Antoine
+>author: Dutkiewicz Antoine <br>
 >contact: antoine.dutkiewicz@hotmail.com
 
 # **USER GUIDE**
