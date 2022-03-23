@@ -179,5 +179,8 @@ In this directory are all the files I needed for the training and the evaluation
 # **MAJOR ISSUES SOLUTIONS**
 
  1. In `custom_network.ipynb`, by executing the training on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved every hundred of epochs in the backup folder so that you don't start again the training from 0.
- 2. Normally, all the other issues should be avoided by following the guided comments in the notebooks. Nonetheless, if you still have troubles, you can contact me.
+ 2. You might get errors related to `'NoneType' object ...`. They are mostly due to problems in the given path of the file. Therefore, at first check if the path is correct. Once done, if the problem persists just relaunch the exexuting environment in Google Colab and reimport your drive in the */content* directory with the first command line.
+ 3. Normally, all the other issues should be avoided by following the guided comments in the notebooks. Nonetheless, if you still have troubles, you can contact me.
+
+
 
