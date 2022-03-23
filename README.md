@@ -161,7 +161,7 @@ In package `cell_detection_ai` is the main code :
 In this directory are all the files I needed for the training and the evaluation of the CNN.
 
 - `./doc_images`: This folder contains the dataset used for the training of the CNN. It needs to contain the pictures and their corresponding annotations from labelImg, plus the `classes.txt` file. The *classes.txt* file corresponds to the labels that were annoted in the pictures.
-- `./test`: This folder contains an image that was used to evaluate the performance of the training with the `image_yolo.ipynb` scriptn and a folder containing all the frames of a video that was used in the `multiple_frame_yolo.ipynb`.
+- `./test`: This folder contains an image that was used to evaluate the performance of the training with the `image_yolo.ipynb` script and a folder containing all the frames of a video that was used in the `multiple_frame_yolo.ipynb`. If you don't want to change the path in the `multiple_frame_yolo.ipynb` notebook, put the frames of the video in a folder like in *video_test*. (PS: you can put raw_data and rename them with the `file_renamer_jpg.py` script)
 - `document_test.txt`: A map of the data used for the test.
 - `document_training.txt`: A map of the data used for the training.
 - `document.data`: A configuration map of the other maps.
@@ -171,7 +171,10 @@ In this directory are all the files I needed for the training and the evaluation
 - `yolov4_custom_best.weights`: A file containing the weights obtained after a training on the dataset in `doc_images`.
 - `yolov4.conv.137`: A file used to create the first backups of the weights if the CNN is strating from scratch. 
 
-# **ISSUES**
+
+
+# **MAJOR ISSUES SOLUTIONS**
 
  1. In `custom_network.ipynb`, by executing the training on Google Colab, you need to restart the execution cell after the `^C` error. The weights are saved every hundred of epochs in the backup folder so that you don't start again the training from 0.
+ 2. Normally, all the other issues should be avoided by following the guided comments in the notebooks. Nonetheless, if you still have troubles, you can contact me.
 
