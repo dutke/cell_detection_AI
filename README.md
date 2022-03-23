@@ -1,5 +1,8 @@
 # cell_detection_AI
 
+>author: Dutkiewicz Antoine
+>contact: antoine.dutkiewicz@hotmail.com
+
 # **USER GUIDE**
 ## Setup the environment
   
